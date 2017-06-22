@@ -19,9 +19,9 @@
       </div>
     </k-section>
 
-    <k-section class="skill" title="Skills" fill="#FCFCFC">
-      <k-slash slot="top-slash" :v-reverse="true" fill="#FCFCFC" />
-      <k-slash slot="bottom-slash" fill="#FCFCFC" />
+    <k-section class="skill" title="Skills" :fill="COLOR['thirdary-color']">
+      <k-slash slot="top-slash" :v-reverse="true" :fill="COLOR['thirdary-color']" />
+      <k-slash slot="bottom-slash" :fill="COLOR['thirdary-color']"  />
 
       <div class="row skill__icon-list">
         <div class="col-md-4 skill__icon">
@@ -75,8 +75,8 @@
     </k-section>
 
 
-    <k-section title="Contact">
-
+    <k-section title="Contact" :fill="COLOR['primary-color']" :reverse="true">
+      <k-slash slot="top-slash" :v-reverse="true" :h-reverse="true" :fill="COLOR['primary-color']" />
     </k-section>
 
 
@@ -89,7 +89,7 @@ import KHeader from './KHeader.vue'
 import KSection from './KSection.vue'
 import KSlash from './KSlash.vue'
 import KWork from './KWork.vue'
-import Color from '@/constants/color'
+import COLOR from '@/constants/color'
 
 import Data from './data.js'
 
@@ -104,6 +104,7 @@ export default {
 
   data() {
     return {
+      COLOR,
       works: Data.works,
     }
   },

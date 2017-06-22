@@ -6,8 +6,8 @@
 
     <div class="k-section__main" :style="{ backgroundColor: fill }">
       <div class="k-container">
-        <div v-if="title" class="k-section__title">
-          <k-section-title :value="title"></k-section-title>
+        <div v-if="title" class="k-section__title" :class="{ reverse: reverse }">
+          <k-section-title :value="title" :reverse="reverse"></k-section-title>
         </div>
 
         <div class="k-section__content">
@@ -39,6 +39,10 @@ export default {
 
     fill: {
       type: String,
+    },
+
+    reverse: {
+      type: Boolean,
     }
   }
 }
@@ -58,7 +62,6 @@ export default {
     text-align: center;
     font-family: LucidaGrande;
     font-size: 56px;
-    color: #303841;
   }
 
   &__content {

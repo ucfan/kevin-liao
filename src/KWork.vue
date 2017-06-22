@@ -1,9 +1,9 @@
 <template>
   <div class="row k-work">
-    <div class="col-md-7 k-work__thumbnail" :class="{ left: !reverse, right: reverse }">
+    <div class="col-sm-12 col-md-7 k-work__thumbnail" :class="{ left: !reverse, right: reverse }">
       <img class="k-work__thumbnail-img" :src="getImgUrl(thumbnail)" :alt="title">
     </div>
-    <div class="col-md-6 k-work__content" :class="{ left: reverse, right: !reverse }">
+    <div class="col-sm-12 col-md-6 k-work__content" :class="{ left: reverse, right: !reverse }">
       <div class="k-work__content-container" :class="{ reverse: reverse }">
         <h3 class="k-work__title">{{ title }}</h3>
         <div class="k-work__intro intro">
@@ -51,8 +51,9 @@ export default {
 @import 'styles/_variables.scss';
 
 .k-work {
-  margin-top: 120px;
   display: flex;
+  margin-top: 120px;
+  padding: 10px;
 
   &__thumbnail, &__content {
     align-self: center;
@@ -107,5 +108,25 @@ export default {
   }
 }
 
+
+@media screen and (max-width: 768px) {
+  .k-work {
+    flex-direction: column;
+
+    &__thumbnail, &__content {
+      align-self: center;
+
+      &.left, &.right {
+        order: 0;
+        margin: 0px !important;
+      }
+    }
+
+    &__content-container.reverse {
+      text-align: left;
+    }
+
+  }
+}
 
 </style>

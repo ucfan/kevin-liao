@@ -208,6 +208,8 @@ body {
 .about-me {
   &__self-intro {
     margin-top: 60px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   &__picture {
@@ -233,6 +235,11 @@ body {
   &__name {
     font-size: 18px;
     line-height: 50px;
+  }
+
+  &__intro {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -265,6 +272,15 @@ body {
     a {
       color: inherit !important;
       text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    &__icon {
+      font-size: 38px;
+      padding: 0 20px;
     }
   }
 }

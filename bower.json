@@ -1,0 +1,23 @@
+{
+  "name": "kevin-liao",
+  "description": "A Vue.js project",
+  "main": "index.js",
+  "authors": [
+    "Kevin Liao <ucfan1784@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ucfan/kevin-liao",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "simple-line-icons": "^2.4.1",
+    "Ionicons": "ionicons#^2.0.1"
+  }
+}

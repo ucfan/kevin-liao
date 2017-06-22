@@ -91,7 +91,30 @@
     <k-section id="contact" title="Contact" :fill="COLOR['primary-color']" :reverse="true">
       <k-slash slot="top-slash" :v-reverse="true" :h-reverse="true" :fill="COLOR['primary-color']" />
 
-      <div class="row">
+      <div class="contact__content">
+        <k-button value="EMAIL ME"></k-button>
+
+        <div class="contact__icon-list">
+          <div class="contact__icon">
+            <a href="#"><i class="icon-envelope"></i></a>
+          </div>
+
+          <div class="contact__icon">
+            <a href="https://www.instagram.com/kevin_liao_____/"><i class="icon-social-instagram"></i></a>
+          </div>
+
+          <div class="contact__icon">
+            <a href="https://www.facebook.com/ucfan1784"><i class="icon-social-facebook"></i></a>
+          </div>
+
+          <div class="contact__icon">
+            <a href="https://twitter.com/ucfan1784"><i class="icon-social-twitter"></i></a>
+          </div>
+
+          <div class="contact__icon">
+            <a href="https://github.com/ucfan/"><i class="icon-social-github"></i></a>
+          </div>
+        </div>
       </div>
     </k-section>
 
@@ -105,9 +128,11 @@ import KHeader from './KHeader.vue'
 import KSection from './KSection.vue'
 import KSlash from './KSlash.vue'
 import KWork from './KWork.vue'
+import KButton from './KButton.vue'
 import COLOR from '@/constants/color'
 
 import Data from './data.js'
+
 
 export default {
   name: 'app',
@@ -116,6 +141,7 @@ export default {
     KSection,
     KSlash,
     KWork,
+    KButton,
   },
 
   data() {
@@ -131,7 +157,18 @@ export default {
         scrollTop: $('#' + element).offset().top
       }, 1000);
     }
+  },
+
+  mounted() {
+    window.sr = ScrollReveal()
+    sr.reveal('.skill__icon')
+    sr.reveal('.about-me__self-intro')
+    sr.reveal('.k-work__thumbnail')
+    sr.reveal('.k-work__content', { delay: 100 })
+    sr.reveal('.k-video')
+    sr.reveal('.contact__icon-list')
   }
+
 }
 </script>
 
@@ -167,6 +204,9 @@ body::after {
   margin: 0 auto;
 }
 
+.center {
+  text-align: center;
+}
 
 .highlight {
   color: $secondary-color;
@@ -243,6 +283,31 @@ body::after {
     cursor: pointer;
   }
 
+}
+
+.contact {
+  &__content {
+    text-align: center;
+    padding: 60px 0;
+  }
+
+  &__icon-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0;
+  }
+
+  &__icon {
+    color: $thirdary-color;
+    font-size: 48px;
+    padding: 0 30px;
+
+    a {
+      color: inherit !important;
+      text-decoration: none;
+    }
+  }
 }
 
 </style>

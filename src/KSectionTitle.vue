@@ -35,7 +35,7 @@ export default {
     color: $primary-font-color;
 
     &.reverse {
-      color: $thirdary-color;
+      color: $secondary-color;
     }
   }
 

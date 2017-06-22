@@ -18,6 +18,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "simple-line-icons": "^2.4.1",
-    "Ionicons": "ionicons#^2.0.1"
+    "Ionicons": "ionicons#^2.0.1",
+    "scrollreveal": "^3.3.5"
   }
 }

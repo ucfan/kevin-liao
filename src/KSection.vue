@@ -60,7 +60,6 @@ export default {
 
   &__title {
     text-align: center;
-    font-family: LucidaGrande;
     font-size: 56px;
   }
 

@@ -1,9 +1,22 @@
 <template>
   <div id="app">
 
+    <div class="k-nav">
+      <div class="k-container">
+        <ul>
+          <li class="k-nav__item" @click="scrollTo('about')">ABOUT</li>
+          <li class="k-nav__item" @click="scrollTo('skills')">SKILLS</li>
+          <li class="k-nav__item" @click="scrollTo('works')">WORKS</li>
+          <li class="k-nav__item" @click="scrollTo('music')">MUSIC</li>
+          <li class="k-nav__item" @click="scrollTo('contact')">CONTACT</li>
+        </ul>
+      </div>
+    </div>
+
+
     <k-header></k-header>
 
-    <k-section class="about-me" title="About Me">
+    <k-section id="about" class="about-me" title="About Me">
       <div class="row about-me__self-intro intro">
         <div class="col-md-8">
           <p>
@@ -19,7 +32,7 @@
       </div>
     </k-section>
 
-    <k-section class="skill" title="Skills" :fill="COLOR['thirdary-color']">
+    <k-section id="skills" class="skill" title="Skills" :fill="COLOR['thirdary-color']">
       <k-slash slot="top-slash" :v-reverse="true" :fill="COLOR['thirdary-color']" />
       <k-slash slot="bottom-slash" :fill="COLOR['thirdary-color']"  />
 
@@ -52,7 +65,7 @@
 
     <div class="clearfix"></div>
 
-    <k-section title="Works">
+    <k-section id="works" title="Works">
       <k-work v-for="(work, i) in works" :key="i"
         :reverse="i % 2 === 1"
         :title="work.title"
@@ -64,7 +77,7 @@
       <!-- <k-button value="MORE"></k-button> -->
     </k-section>
 
-    <k-section title="Music">
+    <k-section id="music" title="Music">
 
       <div class="row k-video">
         <div class="col-md-offset-1 col-md-10">
@@ -75,8 +88,11 @@
     </k-section>
 
 
-    <k-section title="Contact" :fill="COLOR['primary-color']" :reverse="true">
+    <k-section id="contact" title="Contact" :fill="COLOR['primary-color']" :reverse="true">
       <k-slash slot="top-slash" :v-reverse="true" :h-reverse="true" :fill="COLOR['primary-color']" />
+
+      <div class="row">
+      </div>
     </k-section>
 
 
@@ -109,6 +125,13 @@ export default {
     }
   },
 
+  methods: {
+    scrollTo(element) {
+      $('html, body').animate({
+        scrollTop: $('#' + element).offset().top
+      }, 1000);
+    }
+  }
 }
 </script>
 
@@ -122,7 +145,7 @@ export default {
 
 body {
   color: $primary-font-color;
-  font-family: "LucidaGrande";
+  font-family: 'Open Sans', sans-serif;
 }
 
 body::after {
@@ -156,7 +179,7 @@ body::after {
 }
 
 .intro {
-    font-family: PingFangTC-Regular;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color: #3A4750;
     line-height: 26px;
@@ -164,6 +187,7 @@ body::after {
 
 
 /* components */
+
 
 .about-me {
   &__self-intro {
@@ -197,6 +221,28 @@ body::after {
     height: 478px;
     margin: 100px 0;
   }
+}
+
+.k-nav {
+
+  background-color: $primary-color;
+  ul {
+    margin: 0;
+  }
+
+  margin-bottom: -100px;
+
+  &__item {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-block;
+    color: $secondary-font-color;
+    padding: 36px 22px;
+    margin-right: 50px;
+    cursor: pointer;
+  }
+
 }
 
 </style>

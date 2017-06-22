@@ -83,7 +83,6 @@ export default {
 
 
   &__title {
-    font-family: PingFangTC-Medium;
     font-size: 18px;
     color: #000000;
   }

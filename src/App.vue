@@ -51,11 +51,26 @@
     </k-section>
 
     <div class="clearfix"></div>
-    <k-section title="Works">
 
+    <k-section title="Works">
+      <k-work v-for="(work, i) in works" :key="i"
+        :reverse="i % 2 === 1"
+        :title="work.title"
+        :intro="work.intro"
+        :tags="work.tags"
+        :thumbnail="work.thumbnail"
+      ></k-work>
+
+      <!-- <k-button value="MORE"></k-button> -->
     </k-section>
 
     <k-section title="Music">
+
+      <div class="row k-video">
+        <div class="col-md-offset-1 col-md-10">
+          <iframe class="k-video__content" src="https://www.youtube.com/embed/a367lebRPu0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
 
     </k-section>
 
@@ -73,7 +88,10 @@
 import KHeader from './KHeader.vue'
 import KSection from './KSection.vue'
 import KSlash from './KSlash.vue'
+import KWork from './KWork.vue'
 import Color from '@/constants/color'
+
+import Data from './data.js'
 
 export default {
   name: 'app',
@@ -81,10 +99,15 @@ export default {
     KHeader,
     KSection,
     KSlash,
+    KWork,
   },
-  mounted () {
-    console.log(Color)
-  }
+
+  data() {
+    return {
+      works: Data.works,
+    }
+  },
+
 }
 </script>
 
@@ -164,6 +187,14 @@ body::after {
   &__name {
     font-size: 18px;
     line-height: 50px;
+  }
+}
+
+.k-video {
+  &__content {
+    width: 100%;
+    height: 478px;
+    margin: 100px 0;
   }
 }
 

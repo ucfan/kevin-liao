@@ -77,6 +77,10 @@ export default {
     }
   }
 
+  &__content {
+    z-index: 10000;
+  }
+
   &__content-container.reverse {
     text-align: right;
   }

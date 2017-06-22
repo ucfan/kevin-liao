@@ -1,18 +1,7 @@
 <template>
   <div id="app">
 
-    <div class="k-nav">
-      <div class="k-container">
-        <ul>
-          <li class="k-nav__item" @click="scrollTo('about')">ABOUT</li>
-          <li class="k-nav__item" @click="scrollTo('skills')">SKILLS</li>
-          <li class="k-nav__item" @click="scrollTo('works')">WORKS</li>
-          <li class="k-nav__item" @click="scrollTo('music')">MUSIC</li>
-          <li class="k-nav__item" @click="scrollTo('contact')">CONTACT</li>
-        </ul>
-      </div>
-    </div>
-
+    <k-nav></k-nav>
 
     <k-header></k-header>
 
@@ -124,19 +113,20 @@
 
 
 <script>
+import KNav from './KNav.vue'
 import KHeader from './KHeader.vue'
 import KSection from './KSection.vue'
 import KSlash from './KSlash.vue'
 import KWork from './KWork.vue'
 import KButton from './KButton.vue'
+
 import COLOR from '@/constants/color'
-
 import Data from './data.js'
-
 
 export default {
   name: 'app',
   components: {
+    KNav,
     KHeader,
     KSection,
     KSlash,
@@ -151,23 +141,18 @@ export default {
     }
   },
 
-  methods: {
-    scrollTo(element) {
-      $('html, body').animate({
-        scrollTop: $('#' + element).offset().top
-      }, 1000);
-    }
-  },
-
   mounted() {
     window.sr = ScrollReveal()
+    sr.reveal('.i-hello')
+    sr.reveal('.i-whoami', { delay: 100 })
+    sr.reveal('.hashtag', { delay: 200 })
     sr.reveal('.skill__icon')
     sr.reveal('.about-me__self-intro')
     sr.reveal('.k-work__thumbnail')
     sr.reveal('.k-work__content', { delay: 100 })
     sr.reveal('.k-video')
     sr.reveal('.contact__icon-list')
-  }
+  },
 
 }
 </script>
@@ -261,28 +246,6 @@ body::after {
     height: 478px;
     margin: 100px 0;
   }
-}
-
-.k-nav {
-
-  background-color: $primary-color;
-  ul {
-    margin: 0;
-  }
-
-  margin-bottom: -100px;
-
-  &__item {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    display: inline-block;
-    color: $secondary-font-color;
-    padding: 36px 22px;
-    margin-right: 50px;
-    cursor: pointer;
-  }
-
 }
 
 .contact {

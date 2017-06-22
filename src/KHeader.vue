@@ -6,8 +6,8 @@
       <div class="k-container">
         <div class="k-header__title">
           <h1 class="k-header__title-text">
-            Hello,<br />
-            I'm <span class="highlight">Kevin Liao</span>
+            <span class="i-hello">Hello,</span><br />
+            <span class="i-whoami">I'm <span class="highlight">Kevin Liao</span></span>
           </h1>
           <div class="hashtag">#fullstack #developer</div>
         </div>

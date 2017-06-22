@@ -41,7 +41,6 @@ export default {
   methods: {
     getImgUrl(img) {
       const images = require.context('./assets/', false, /\.png$/)
-      console.log(images('./' + img))
       return images('./' + img)
     }
   }

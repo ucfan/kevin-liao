@@ -124,4 +124,16 @@ export default {
   }
 }
 
+
+@media screen and (max-width: 768px) {
+  .k-nav {
+    ul {
+      padding: 0;
+    }
+    &__item {
+      font-size: 15px;
+    }
+  }
+}
+
 </style>

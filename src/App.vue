@@ -18,6 +18,9 @@
             解決問題的同時提供友好的操作介面是我的目標，希望透過累積實戰經驗，讓自己朝目標更加邁進。
           </p>
         </div>
+        <div class="col-md-4 about-me__picture">
+          <i class="icon ion-arrow-graph-up-right"></i>
+        </div>
       </div>
     </k-section>
 
@@ -148,6 +151,7 @@ export default {
     sr.reveal('.hashtag', { delay: 200 })
     sr.reveal('.skill__icon')
     sr.reveal('.about-me__self-intro')
+    sr.reveal('.about-me__picture')
     sr.reveal('.k-work__thumbnail')
     sr.reveal('.k-work__content', { delay: 100 })
     sr.reveal('.k-video')
@@ -168,19 +172,6 @@ export default {
 body {
   color: $primary-font-color;
   font-family: 'Open Sans', sans-serif;
-}
-
-body::after {
-  content: "";
-  background: url(./assets/me.png);
-  background-repeat: no-repeat;
-  width: 445px;
-  height: 548px;
-  top: 865px;
-  bottom: 0;
-  right: 100px;
-  position: absolute;
-  z-index: -1;
 }
 
 .k-container {
@@ -217,7 +208,12 @@ body::after {
 .about-me {
   &__self-intro {
     margin-top: 60px;
-    margin-bottom: 60px;
+  }
+
+  &__picture {
+    color: $primary-font-color;
+    font-size: 130px;
+    text-align: center;
   }
 }
 

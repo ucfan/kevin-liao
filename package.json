@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "precommit": "npm run build && git add -A"
   },
   "dependencies": {
     "express": "^4.15.3",
@@ -18,9 +19,14 @@
     "babel-preset-env": "^1.5.1",
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.9.0",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "^2.29.0",
+    "husky": "^0.14.1",
     "node-sass": "^4.5.0",
     "sass-loader": "^5.0.1",
+    "style-loader": "^0.18.2",
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1",

@@ -41,8 +41,10 @@ export default {
   },
 
   mounted() {
-    $(document).scroll(() => {
-      this.fixed = isTop(document.body.scrollTop)
+    $(window).scroll(() => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.srollTop || 0;
+
+      this.fixed = isTop(scrollTop)
 
       const list = ['about', 'skills', 'works', 'music', 'contact']
 
@@ -52,7 +54,7 @@ export default {
         return
       }
 
-      const pos = document.body.scrollTop + 1 // 對付小數點
+      const pos = scrollTop + 1
 
       // 判斷目前捲軸在哪個區塊
       const result = list.reduce((result, id, i) => {

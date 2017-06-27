@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/kevin-liao/dist/',
     filename: '[name].js',
   },
   module: {
@@ -75,7 +75,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
+  devtool: debug ? '#eval-source-map' : '#cheap-source-map',
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
